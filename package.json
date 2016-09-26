@@ -1,0 +1,28 @@
+{
+  "name": "px2em",
+  "version": "0.0.1",
+  "description": "help to generate css file with the em but coding with px",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node px2em.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luobata/px2em.git"
+  },
+  "keywords": [
+    "px",
+    "em",
+    "px-em",
+    "px2em"
+  ],
+  "author": "luobata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Luobata/px2em/issues"
+  },
+  "homepage": "https://github.com/Luobata/px2em#readme"
+}

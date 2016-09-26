@@ -1,0 +1,662 @@
+/*loading动画*/
+body {
+    background: #f0f0f0;
+    /*width: 320px;*/
+}
+.global_loading_w {
+    width: 100%;
+    height: 100%;
+    background: #ff5500;
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
+}
+.global_loading_w .global_loading {
+    margin: 100px auto 0;
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -17.5px;
+    left: 50%;
+    margin-left: -75px;
+}
+
+.global_loading_w .global_loading > div {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.global_loading_w .global_loading .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.global_loading_w .global_loading .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+/* 加载loading动画 */
+
+.global-loading.absolute {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0px) translateZ(0px);
+    transform: translate(-50%, 0px) translateZ(0px);
+}
+
+.global-loading.downUpdate {
+    bottom: 0;
+}
+
+.global-loading {
+    text-align: center;
+    color: #8c8b8b;
+    font-size: 15px;
+    height: 52px;
+    line-height: 52px;
+    background: #f5f5f5;
+}
+.global-loading .loading-text {
+    margin-left: 5px;
+}
+.global-loading .load-container {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.global-loading .load-container .loader {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #9a9a9a;
+    background: -webkit-linear-gradient(left, #9a9a9a 10%, rgba(154, 154, 154, 0) 42%);
+    background: linear-gradient(to right, #9a9a9a 10%, rgba(154, 154, 154, 0) 42%);
+    position: relative;
+    
+}
+.global-loading .load-container .loader.active {
+    -webkit-animation: loading 1.4s infinite linear;
+    animation: loading 1.4s infinite linear;
+}
+
+.global-loading .load-container .loader:before {
+    width: 50%;
+    height: 50%;
+    background: #9a9a9a;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+.global-loading .load-container .loader:after {
+    background: #f0f0f0;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+@-webkit-keyframes loading {
+    0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+@keyframes loading {
+    0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+
+/*触摸高亮*/
+.global-tap-element {
+    -webkit-transition: background .3s cubic-bezier(1, 0, 1, 0);
+    transition: background .3s cubic-bezier(1, 0, 1, 0);
+}
+.global-tap-element-highlight {
+    background: rgba(191,191,191,0.4);
+    -webkit-transition: background .01s cubic-bezier(0, 1, 0, 1);
+    transition: background .3s cubic-bezier(1, 0, 1, 0);
+}
+/*触摸收缩*/
+
+/*toast组件*/
+.global-toast {
+    position: fixed;
+    left: 50%;
+    z-index: 2147483646;
+    background: #7a7a7a;
+    color: #fff;
+    font-size: 13px;
+    border-radius: 5px;
+    padding: 8px 10px;
+    -webkit-transform: scale(1.5);
+    transform:scale(1.5);
+    opacity: 0.2;
+    max-width: 145px;
+    text-align: center;
+}
+
+/*actionSheet组件*/
+.global-sheet-press {
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    z-index: 99999;
+}
+
+.global-action-sheet {
+    position: absolute;
+    bottom: 0;
+    z-index: 999999;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    background: #eeedf2;
+    -webkit-transform: translate3d(0,100%,0);
+    -moz-transform: translate3d(0,100%,0);
+    -ms-transform: translate3d(0,100%,0);
+    -o-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+}
+
+.global-action-sheet .global-content-sheet {
+    background: #fff;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-title {
+    font-size: 13px;
+    color: #797979;
+    padding: 21.5px 20px;
+    line-height: 15px;
+    border-bottom: 1px solid #dbd3d1;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item-w {
+
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item {
+    width: 100%;
+    padding: 10.5px 0;
+    border-top: 1px solid #dbd3d1;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item {
+    width: 100%;
+    padding: 10.5px 0;
+    border-top: 1px solid #dbd3d1;
+    color: #4398ed;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item:first-child {
+    border: none;
+}
+
+.global-action-sheet .global-sheet-cancel {
+    width: 100%;
+    background: #fff;
+    padding: 10.5px 0;
+    margin-top: 6px;
+    color: #4398ed;
+}
+
+.global-action-sheet .global-sheet-cancel.global-tap-element-highlight {
+    background: rgba(191,191,191,0.4);
+}
+
+/*公共横幅*/
+.global-top-banner{
+    height: 24px;
+    line-height: 24px;
+    /*padding-left: 8px;
+    border-left: 4px solid #ff5500;*/
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    background-color: #fff;
+    font-size: 13px;
+    position: relative;
+}
+.global-top-banner .global-top-banner-border{
+    width: 4px;
+    height: 100%;
+    background-color: #f50;
+    float: left;
+}
+.global-top-banner .global-top-banner-content{
+    height: 100%;
+    margin-left: 8px;
+}
+.global-top-banner .global-top-banner-select {
+    color: #666;
+}
+
+.global-top-banner .global-top-banner-select .banner-select-item {
+    margin-right: 6px;
+}
+
+.global-top-banner .global-top-banner-select .banner-select-item.active {
+    color: #f50;
+}
+/*公共按钮*/
+.global-btn{
+    width: 294px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #ff5500;
+    border-radius: 8px;
+    border: 0;
+    outline: none;
+    text-align: center;
+}
+/*
+    遮罩
+*/
+.global-overlay{
+    width: 320px;
+    height:568px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 1;
+}
+/*
+    测试弹出框
+*/
+.global-dialog{
+    width: 280px;
+    height: 400px;
+    background-color: #fff;
+    position: absolute;
+    left: 20px;
+    top: 84px;
+}
+.global-hide{
+    display: none;
+}
+/* 问题列表-未回答 */
+.global-question-list-w {
+    background: #f0f0f0;
+    margin-top: 20px;
+}
+
+.global-question-list-w .global-question-list-item {
+    padding: 11px 13px 7px;
+    background: #fff;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 4px;
+}
+
+.global-question-list-item-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #1b1b1b;
+    word-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.global-question-list-item-body {
+    padding: 3px 0;
+}
+
+.global-question-list-itembody-left {
+    float: left;
+    margin-top: 3px;
+}
+
+.global-question-list-item-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.global-question-list-itembody-right {
+    float: left;
+    margin-left: 11px;
+    width: 233px;
+}
+
+.global-question-list-itembody-title {
+    font-size: 13px;
+    color: #666;
+    word-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.global-question-list-itembody-content {
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+.global-question-list-itembodyright-left {
+    float: left;
+}
+
+.global-question-list-itembodyrightleft-w {
+    
+}
+
+.global-question-list-itembodyrightleft-clock {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("./imgs/clock.png") no-repeat;
+    background-size: 100%;
+    margin-bottom: -1px;
+}
+
+.global-question-list-itembodyrightleft-time {
+
+}
+
+.global-question-list-itembodyrightleft-know {
+    margin-top: -2px;
+}
+
+.global-question-list-itembodyrightleft-num {
+    color: #ff5500;
+}
+
+.global-question-list-itembodyright-right {
+    float: right;
+    margin-top: 4px;
+}
+
+.global-question-list-itembodyrightright-button {
+    display: inline-block;
+    color: #fff;
+    width: 69px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 13px;
+}
+
+.global-question-list-itembodyrightright-button.active {
+    background: url("./imgs/button.png") no-repeat;
+    background-size: 100%;
+    border-radius: none;
+    line-height:0;
+    font-size:0;
+    overflow:hidden;
+}
+
+/* 
+    答主列表
+ */
+.global-responder-list{
+    list-style: none;
+ }
+.global-responder-list li{
+    overflow: hidden;
+ }
+.global-responder-list li .pic{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 13.6px;
+ }
+ .global-responder-list li .right{
+    position: relative;
+    margin-left: 73px;
+    overflow: hidden;
+ }
+ .global-responder-list li:not(:last-child) .right{
+    border-bottom: 1px solid #e8e8e8;
+ }
+ .global-responder-list li .right .focus-btn{
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    padding: 4px 17px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #ff5500;
+ }
+ .global-responder-list li .right .focused{
+    background-color: #e1e1e1;
+ }
+ .global-responder-list li .line-1{
+    margin-top: 9px;
+ }
+ .global-responder-list li .line-2{
+    font-size: 12px;
+    /*margin-top: 1px;*/
+ }
+ .global-responder-list li .line-3{
+    font-size: 12px;
+    margin-top: -3px;
+    margin-bottom: 6.5px;
+ }
+ .global-responder-list li .name{
+    font-weight: 600;
+    font-size: 15px;
+    vertical-align: middle;
+ }
+.global-responder-list li .desc{
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 4px;
+    width: 88px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: -7px;
+} 
+.global-responder-list li .answer-num{
+    
+}
+.global-responder-list li .focus-num{
+    
+}
+.global-responder-list li .popularity{
+    
+}
+
+/* 
+    已答问题列表
+ */
+.global-questioin-list-answered{
+
+}
+.global-questioin-list-answered .question{
+    background-color: #fff;
+    overflow: hidden;
+    padding: 11px 0px 14px 0px;
+}
+.global-questioin-list-answered .question:not(:last-child){
+    margin-bottom: 6px;
+}
+.global-questioin-list-answered .question .title{
+    font-size: 15px;
+    margin-left: 12px;
+    line-height: 20px;
+}
+ .global-questioin-list-answered .question .desc{
+    overflow: hidden;
+    margin-bottom: 6px;
+ }
+.global-questioin-list-answered .question .desc .pic{
+    width: 27px;
+    height: 27px;
+    float: left;
+    margin: 7px auto auto 13px;
+}
+.global-questioin-list-answered .question .desc .right{
+    margin-left: 49px;
+    overflow: hidden;
+ }
+.global-questioin-list-answered .question .desc .right .line-1{
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+.global-questioin-list-answered .question .desc .right .line-2{
+    font-size: 12px;
+    color: #8c8b8b;
+    margin-top: -3px;
+    overflow: hidden;
+}
+.global-questioin-list-answered .question .desc .right .line-2 .like-btn{
+    float: right;
+    width: 15px;
+    height: 12px;
+    background-image: url(imgs/like.png);
+    background-repeat: no-repeat;
+    background-size: 15px 12px;
+    margin-top: 2px;
+    margin-right: 13px;
+}
+.global-questioin-list-answered .question .desc .right .line-2 .like-num{
+    float: right;
+    margin-right: 11px;
+}
+.global-questioin-list-answered .question .answer-text{
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 13px;
+    padding: 10px;
+    border-radius: 12px;
+    color: #fff;
+    background-color: #fb6c24;
+    font-size: 14px;
+    line-height: 17px;
+}
+.global-questioin-list-answered .question .global-audio-box,.global-questioin-list-answered .question .global-video-box{
+    margin-left: 50px;
+}
+/*
+    公共语音播放条
+*/
+.global-audio-box{
+    width: 225px;
+    height: 31px;
+    background-color: #fb6c24;
+    overflow: hidden;
+    /*margin-left: 50px;*/
+    border-radius: 8px;
+    position: relative;
+}
+.global-audio-box .play-btn{
+    width: 14px;
+    height: 15px;z
+    background-image: url(imgs/play.png);
+    background-size: 14px 15px;
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 8px;
+    margin-left: 11px;
+}
+.global-audio-box .progress-all{
+    width: 149px;
+    height: 2px;
+    margin-left: 35px;
+    margin-top: 14px;
+    background-color:#e74f03;
+}
+.global-audio-box .progress-all .progress-now{
+    background-color: #fff;
+    height: 2px;
+    width: 10px;
+}
+.global-audio-box .total-time{
+    font-size: 13px;
+    float: right;
+    margin-right: 11px;
+    margin-top: 7px;
+    color: #fff;
+}
+.global-audio-box .audio{
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+.global-video-box{
+    width: 257px;
+    height: 148px;
+    border-radius: 8px;
+    background-color: #000;
+    overflow: hidden;
+    display: table;
+    text-align: center;
+    position: relative;
+}
+.global-video-box .wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    position:relative;
+    
+}
+.global-video-box .wrapper .video-content{
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+.global-video-box .play-btn{
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -15px;
+    border-radius: 10px;
+    background-color: #fb6c24;
+    background-image: url(imgs/play.png);
+    background-repeat: no-repeat;
+    background-size: 14px 15px;
+    background-position: 50% 50%;
+}

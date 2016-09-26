@@ -1,0 +1,662 @@
+/*loading动画*/
+body {
+    background: #f0f0f0;
+    /*width: 26.666666667em;*/
+}
+.global_loading_w {
+    width: 100%;
+    height: 100%;
+    background: #ff5500;
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
+}
+.global_loading_w .global_loading {
+    margin: 8.333333333em auto 0;
+    width: 12.500000000em;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.458333333em;
+    left: 50%;
+    margin-left: -6.250000000em;
+}
+
+.global_loading_w .global_loading > div {
+    width: 2.500000000em;
+    height: 2.500000000em;
+    background-color: #fff;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.global_loading_w .global_loading .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.global_loading_w .global_loading .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+/* 加载loading动画 */
+
+.global-loading.absolute {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 1px) translateZ(1px);
+    transform: translate(-50%, 1px) translateZ(1px);
+}
+
+.global-loading.downUpdate {
+    bottom: 0;
+}
+
+.global-loading {
+    text-align: center;
+    color: #8c8b8b;
+    font-size: 1.25em;
+    height: 3.466666667em;
+    line-height: 3.466666667em;
+    background: #f5f5f5;
+}
+.global-loading .loading-text {
+    margin-left: 0.416666667em;
+}
+.global-loading .load-container {
+    display: inline-block;
+    width: 1.333333333em;
+    height: 1.333333333em;
+}
+.global-loading .load-container .loader {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #9a9a9a;
+    background: -webkit-linear-gradient(left, #9a9a9a 10%, rgba(154, 154, 154, 0) 42%);
+    background: linear-gradient(to right, #9a9a9a 10%, rgba(154, 154, 154, 0) 42%);
+    position: relative;
+    
+}
+.global-loading .load-container .loader.active {
+    -webkit-animation: loading 1.4s infinite linear;
+    animation: loading 1.4s infinite linear;
+}
+
+.global-loading .load-container .loader:before {
+    width: 50%;
+    height: 50%;
+    background: #9a9a9a;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+.global-loading .load-container .loader:after {
+    background: #f0f0f0;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+@-webkit-keyframes loading {
+    0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+@keyframes loading {
+    0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+
+/*触摸高亮*/
+.global-tap-element {
+    -webkit-transition: background .3s cubic-bezier(1, 0, 1, 0);
+    transition: background .3s cubic-bezier(1, 0, 1, 0);
+}
+.global-tap-element-highlight {
+    background: rgba(191,191,191,0.4);
+    -webkit-transition: background .01s cubic-bezier(0, 1, 0, 1);
+    transition: background .3s cubic-bezier(1, 0, 1, 0);
+}
+/*触摸收缩*/
+
+/*toast组件*/
+.global-toast {
+    position: fixed;
+    left: 50%;
+    z-index: 2147483646;
+    background: #7a7a7a;
+    color: #fff;
+    font-size: 1.0833333333333333em;
+    border-radius: 0.384615385em;
+    padding: 0.615384615em 0.769230769em;
+    -webkit-transform: scale(1.5);
+    transform:scale(1.5);
+    opacity: 0.2;
+    max-width: 11.153846154em;
+    text-align: center;
+}
+
+/*actionSheet组件*/
+.global-sheet-press {
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    z-index: 99999;
+}
+
+.global-action-sheet {
+    position: absolute;
+    bottom: 0;
+    z-index: 999999;
+    text-align: center;
+    width: 100%;
+    font-size: 1.5em;
+    background: #eeedf2;
+    -webkit-transform: translate3d(0,100%,0);
+    -moz-transform: translate3d(0,100%,0);
+    -ms-transform: translate3d(0,100%,0);
+    -o-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+}
+
+.global-action-sheet .global-content-sheet {
+    background: #fff;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-title {
+    font-size: 1.0833333333333333em;
+    color: #797979;
+    padding: 1.653846154em 1.538461538em;
+    line-height: 1.153846154em;
+    border-bottom: 1px solid #dbd3d1;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item-w {
+
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item {
+    width: 100%;
+    padding: 0.875000000em 0;
+    border-top: 0.083333333em solid #dbd3d1;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item {
+    width: 100%;
+    padding: 0.875000000em 0;
+    border-top: 0.083333333em solid #dbd3d1;
+    color: #4398ed;
+}
+
+.global-action-sheet .global-content-sheet .global-sheet-item:first-child {
+    border: none;
+}
+
+.global-action-sheet .global-sheet-cancel {
+    width: 100%;
+    background: #fff;
+    padding: 0.875000000em 0;
+    margin-top: 0.500000000em;
+    color: #4398ed;
+}
+
+.global-action-sheet .global-sheet-cancel.global-tap-element-highlight {
+    background: rgba(191,191,191,0.4);
+}
+
+/*公共横幅*/
+.global-top-banner{
+    height: 1.846153846em;
+    line-height: 1.846153846em;
+    /*padding-left: 0.615384615em;
+    border-left: 0.307692308em solid #ff5500;*/
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    background-color: #fff;
+    font-size: 1.0833333333333333em;
+    position: relative;
+}
+.global-top-banner .global-top-banner-border{
+    width: 0.333333333em;
+    height: 100%;
+    background-color: #f50;
+    float: left;
+}
+.global-top-banner .global-top-banner-content{
+    height: 100%;
+    margin-left: 0.666666667em;
+}
+.global-top-banner .global-top-banner-select {
+    color: #666;
+}
+
+.global-top-banner .global-top-banner-select .banner-select-item {
+    margin-right: 0.500000000em;
+}
+
+.global-top-banner .global-top-banner-select .banner-select-item.active {
+    color: #f50;
+}
+/*公共按钮*/
+.global-btn{
+    width: 24.500000000em;
+    height: 3.333333333em;
+    line-height: 3.333333333em;
+    color: #fff;
+    background-color: #ff5500;
+    border-radius: 0.666666667em;
+    border: 0;
+    outline: none;
+    text-align: center;
+}
+/*
+    遮罩
+*/
+.global-overlay{
+    width: 26.666666667em;
+    height:47.333333333em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 1;
+}
+/*
+    测试弹出框
+*/
+.global-dialog{
+    width: 23.333333333em;
+    height: 33.333333333em;
+    background-color: #fff;
+    position: absolute;
+    left: 1.666666667em;
+    top: 7.000000000em;
+}
+.global-hide{
+    display: none;
+}
+/* 问题列表-未回答 */
+.global-question-list-w {
+    background: #f0f0f0;
+    margin-top: 1.666666667em;
+}
+
+.global-question-list-w .global-question-list-item {
+    padding: 0.916666667em 1.083333333em 0.583333333em;
+    background: #fff;
+    border-top: 0.083333333em solid #e4e4e4;
+    border-bottom: 0.083333333em solid #e4e4e4;
+    margin-bottom: 0.333333333em;
+}
+
+.global-question-list-item-title {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #1b1b1b;
+    word-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.global-question-list-item-body {
+    padding: 0.250000000em 0;
+}
+
+.global-question-list-itembody-left {
+    float: left;
+    margin-top: 0.250000000em;
+}
+
+.global-question-list-item-avatar {
+    width: 4.166666667em;
+    height: 4.166666667em;
+    border-radius: 4.166666667em;
+}
+
+.global-question-list-itembody-right {
+    float: left;
+    margin-left: 0.916666667em;
+    width: 19.416666667em;
+}
+
+.global-question-list-itembody-title {
+    font-size: 1.0833333333333333em;
+    color: #666;
+    word-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.global-question-list-itembody-content {
+    font-size: 1em;
+    color: #666;
+    margin-top: 0.250000000em;
+}
+
+.global-question-list-itembodyright-left {
+    float: left;
+}
+
+.global-question-list-itembodyrightleft-w {
+    
+}
+
+.global-question-list-itembodyrightleft-clock {
+    display: inline-block;
+    width: 1.000000000em;
+    height: 1.000000000em;
+    background: url("./imgs/clock.png") no-repeat;
+    background-size: 100%;
+    margin-bottom: -0.083333333em;
+}
+
+.global-question-list-itembodyrightleft-time {
+
+}
+
+.global-question-list-itembodyrightleft-know {
+    margin-top: -0.166666667em;
+}
+
+.global-question-list-itembodyrightleft-num {
+    color: #ff5500;
+}
+
+.global-question-list-itembodyright-right {
+    float: right;
+    margin-top: 0.333333333em;
+}
+
+.global-question-list-itembodyrightright-button {
+    display: inline-block;
+    color: #fff;
+    width: 5.307692308em;
+    height: 2.000000000em;
+    line-height: 2.000000000em;
+    font-size: 1.0833333333333333em;
+}
+
+.global-question-list-itembodyrightright-button.active {
+    background: url("./imgs/button.png") no-repeat;
+    background-size: 100%;
+    border-radius: none;
+    line-height:0;
+    font-size:0;
+    overflow:hidden;
+}
+
+/* 
+    答主列表
+ */
+.global-responder-list{
+    list-style: none;
+ }
+.global-responder-list li{
+    overflow: hidden;
+ }
+.global-responder-list li .pic{
+    width: 4.166666667em;
+    height: 4.166666667em;
+    float: left;
+    margin-top: 0.833333333em;
+    margin-left: 1.133333333em;
+ }
+ .global-responder-list li .right{
+    position: relative;
+    margin-left: 6.083333333em;
+    overflow: hidden;
+ }
+ .global-responder-list li:not(:last-child) .right{
+    border-bottom: 0.083333333em solid #e8e8e8;
+ }
+ .global-responder-list li .right .focus-btn{
+    position: absolute;
+    right: 1.000000000em;
+    bottom: 0.833333333em;
+    padding: 0.333333333em 1.416666667em;
+    border-radius: 0.833333333em;
+    color: #fff;
+    background-color: #ff5500;
+ }
+ .global-responder-list li .right .focused{
+    background-color: #e1e1e1;
+ }
+ .global-responder-list li .line-1{
+    margin-top: 0.750000000em;
+ }
+ .global-responder-list li .line-2{
+    font-size: 1em;
+    /*margin-top: 0.083333333em;*/
+ }
+ .global-responder-list li .line-3{
+    font-size: 1em;
+    margin-top: -0.250000000em;
+    margin-bottom: 0.541666667em;
+ }
+ .global-responder-list li .name{
+    font-weight: 600;
+    font-size: 1.25em;
+    vertical-align: middle;
+ }
+.global-responder-list li .desc{
+    display: inline-block;
+    font-size: 1.0833333333333333em;
+    margin-left: 0.307692308em;
+    width: 6.769230769em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: -0.538461538em;
+} 
+.global-responder-list li .answer-num{
+    
+}
+.global-responder-list li .focus-num{
+    
+}
+.global-responder-list li .popularity{
+    
+}
+
+/* 
+    已答问题列表
+ */
+.global-questioin-list-answered{
+
+}
+.global-questioin-list-answered .question{
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0.916666667em 1px 1.166666667em 1px;
+}
+.global-questioin-list-answered .question:not(:last-child){
+    margin-bottom: 0.500000000em;
+}
+.global-questioin-list-answered .question .title{
+    font-size: 1.25em;
+    margin-left: 0.800000000em;
+    line-height: 1.333333333em;
+}
+ .global-questioin-list-answered .question .desc{
+    overflow: hidden;
+    margin-bottom: 0.500000000em;
+ }
+.global-questioin-list-answered .question .desc .pic{
+    width: 2.250000000em;
+    height: 2.250000000em;
+    float: left;
+    margin: 0.583333333em auto auto 1.083333333em;
+}
+.global-questioin-list-answered .question .desc .right{
+    margin-left: 4.083333333em;
+    overflow: hidden;
+ }
+.global-questioin-list-answered .question .desc .right .line-1{
+    font-size: 1.0833333333333333em;
+    color: #666;
+    margin-top: 0.307692308em;
+}
+.global-questioin-list-answered .question .desc .right .line-2{
+    font-size: 1em;
+    color: #8c8b8b;
+    margin-top: -0.250000000em;
+    overflow: hidden;
+}
+.global-questioin-list-answered .question .desc .right .line-2 .like-btn{
+    float: right;
+    width: 1.250000000em;
+    height: 1.000000000em;
+    background-image: url(imgs/like.png);
+    background-repeat: no-repeat;
+    background-size: 1.250000000em 1.000000000em;
+    margin-top: 0.166666667em;
+    margin-right: 1.083333333em;
+}
+.global-questioin-list-answered .question .desc .right .line-2 .like-num{
+    float: right;
+    margin-right: 0.916666667em;
+}
+.global-questioin-list-answered .question .answer-text{
+    display: inline-block;
+    margin-left: 3.571428571em;
+    margin-right: 0.928571429em;
+    padding: 0.714285714em;
+    border-radius: 0.857142857em;
+    color: #fff;
+    background-color: #fb6c24;
+    font-size: 1.1666666666666667em;
+    line-height: 1.214285714em;
+}
+.global-questioin-list-answered .question .global-audio-box,.global-questioin-list-answered .question .global-video-box{
+    margin-left: 4.166666667em;
+}
+/*
+    公共语音播放条
+*/
+.global-audio-box{
+    width: 18.750000000em;
+    height: 2.583333333em;
+    background-color: #fb6c24;
+    overflow: hidden;
+    /*margin-left: 4.166666667em;*/
+    border-radius: 0.666666667em;
+    position: relative;
+}
+.global-audio-box .play-btn{
+    width: 1.166666667em;
+    height: 1.250000000em;z
+    background-image: url(imgs/play.png);
+    background-size: 1.166666667em 1.250000000em;
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 0.666666667em;
+    margin-left: 0.916666667em;
+}
+.global-audio-box .progress-all{
+    width: 12.416666667em;
+    height: 0.166666667em;
+    margin-left: 2.916666667em;
+    margin-top: 1.166666667em;
+    background-color:#e74f03;
+}
+.global-audio-box .progress-all .progress-now{
+    background-color: #fff;
+    height: 0.166666667em;
+    width: 0.833333333em;
+}
+.global-audio-box .total-time{
+    font-size: 1.0833333333333333em;
+    float: right;
+    margin-right: 0.846153846em;
+    margin-top: 0.538461538em;
+    color: #fff;
+}
+.global-audio-box .audio{
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+.global-video-box{
+    width: 21.416666667em;
+    height: 12.333333333em;
+    border-radius: 0.666666667em;
+    background-color: #000;
+    overflow: hidden;
+    display: table;
+    text-align: center;
+    position: relative;
+}
+.global-video-box .wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    position:relative;
+    
+}
+.global-video-box .wrapper .video-content{
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+.global-video-box .play-btn{
+    width: 3.333333333em;
+    height: 2.500000000em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -1.666666667em;
+    margin-top: -1.250000000em;
+    border-radius: 0.833333333em;
+    background-color: #fb6c24;
+    background-image: url(imgs/play.png);
+    background-repeat: no-repeat;
+    background-size: 1.166666667em 1.250000000em;
+    background-position: 50% 50%;
+}
