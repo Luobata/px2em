@@ -2,7 +2,7 @@
   "name": "px2em",
   "version": "1.0.0",
   "description": "help to generate css file with the em but coding with px",
-  "main": "app.js",
+  "main": "./src/px2em.js",
   "directories": {
     "test": "test"
   },
